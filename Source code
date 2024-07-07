@@ -1,0 +1,320 @@
+#include<iostream>
+#include<fstream>
+#include<iomanip>
+
+using namespace std;
+
+void mainMenu();
+
+class Management {
+    public:
+        Management() {
+            mainMenu();
+        }
+};
+
+class Details {
+    public:
+        static string name, gender;
+        int phno;
+        int age;
+        string address;
+        static int Custid;
+        char arr[100];
+
+        void information() {
+            cout << "\nEnter the Customer ID: ";
+            cin >> Custid;
+            cout << "\nEnter the name: ";
+            cin >> name;
+            cout << "\nEnter the age: ";
+            cin >> age;
+            cout << "\nEnter the address: ";
+            cin >> address;
+            cout << "\nEnter the gender: ";
+            cin >> gender;
+            cout << "Thank you, your details are saved." << endl;
+        }
+};
+
+int Details::Custid;
+string Details::name;
+string Details::gender;
+
+class Registration {
+    public:
+        static int choice;
+        int choice1;
+        int back;
+        static float charges;
+
+        void flights() {
+            string flightN[] = {"Dubai", "Canada", "UK", "USA"};
+            for (int i = 0; i < 4; i++) {
+                cout << (i + 1) << " Flight to " << flightN[i] << endl;
+            }
+
+            cout << "\nWelcome to the Airlines!" << endl;
+            cout << "Press the number of the country you want to go to: ";
+            cin >> choice;
+
+            switch (choice) {
+                case 1: {
+                    cout << "___________Welcome to Dubai Airlines___________" << endl;
+                    cout << "Following are the flights to Dubai\n" << endl;
+                    cout << "1. DUB - 498" << endl;
+                    cout << "\t08-07-2024 8:00 AM 10 hrs Rs. 10000" << endl;
+                    cout << "2. DUB - 4098" << endl;
+                    cout << "\t08-07-2024 8:00 AM 10 hrs Rs. 20000" << endl;
+                    cout << "3. DUB - 7798" << endl;
+                    cout << "\t08-07-2024 8:00 AM 10 hrs Rs. 40000" << endl;
+
+                    cout << "\nSelect the flight you want: ";
+                    cin >> choice1;
+
+                    if (choice1 == 1) {
+                        charges = 10000;
+                        cout << "Successfully booked DUB - 498" << endl;
+                    } else if (choice1 == 2) {
+                        charges = 20000;
+                        cout << "Successfully booked DUB - 4098" << endl;
+                    } else if (choice1 == 3) {
+                        charges = 40000;
+                        cout << "Successfully booked DUB - 7798" << endl;
+                    } else {
+                        cout << "Invalid choice" << endl;
+                        flights();
+                    }
+
+                    cout << "Press any key to go to the main menu: ";
+                    cin >> back;
+                    mainMenu();
+                    break;
+                }
+                case 2: {
+                    cout << "___________Welcome to Canada Airlines___________" << endl;
+                    cout << "Following are the flights to Canada\n" << endl;
+                    cout << "1. CAN - 498" << endl;
+                    cout << "\t08-07-2024 8:00 AM 10 hrs Rs. 10000" << endl;
+                    cout << "2. CAN - 4098" << endl;
+                    cout << "\t08-07-2024 8:00 AM 10 hrs Rs. 20000" << endl;
+                    cout << "3. CAN - 7798" << endl;
+                    cout << "\t08-07-2024 8:00 AM 10 hrs Rs. 40000" << endl;
+
+                    cout << "\nSelect the flight you want: ";
+                    cin >> choice1;
+
+                    if (choice1 == 1) {
+                        charges = 10000;
+                        cout << "Successfully booked CAN - 498" << endl;
+                    } else if (choice1 == 2) {
+                        charges = 20000;
+                        cout << "Successfully booked CAN - 4098" << endl;
+                    } else if (choice1 == 3) {
+                        charges = 40000;
+                        cout << "Successfully booked CAN - 7798" << endl;
+                    } else {
+                        cout << "Invalid choice" << endl;
+                        flights();
+                    }
+
+                    cout << "Press any key to go to the main menu: ";
+                    cin >> back;
+                    mainMenu();
+                    break;
+                }
+                case 3: {
+                    cout << "___________Welcome to UK Airlines___________" << endl;
+                    cout << "Following are the flights to the UK\n" << endl;
+                    cout << "1. UK - 498" << endl;
+                    cout << "\t08-07-2024 8:00 AM 10 hrs Rs. 10000" << endl;
+                    cout << "2. UK - 4098" << endl;
+                    cout << "\t08-07-2024 8:00 AM 10 hrs Rs. 20000" << endl;
+                    cout << "3. UK - 7798" << endl;
+                    cout << "\t08-07-2024 8:00 AM 10 hrs Rs. 40000" << endl;
+
+                    cout << "\nSelect the flight you want: ";
+                    cin >> choice1;
+
+                    if (choice1 == 1) {
+                        charges = 10000;
+                        cout << "Successfully booked UK - 498" << endl;
+                    } else if (choice1 == 2) {
+                        charges = 20000;
+                        cout << "Successfully booked UK - 4098" << endl;
+                    } else if (choice1 == 3) {
+                        charges = 40000;
+                        cout << "Successfully booked UK - 7798" << endl;
+                    } else {
+                        cout << "Invalid choice" << endl;
+                        flights();
+                    }
+
+                    cout << "Press any key to go to the main menu: ";
+                    cin >> back;
+                    mainMenu();
+                    break;
+                }
+                case 4: {
+                    cout << "___________Welcome to USA Airlines___________" << endl;
+                    cout << "Following are the flights to the USA\n" << endl;
+                    cout << "1. USA - 498" << endl;
+                    cout << "\t08-07-2024 8:00 AM 10 hrs Rs. 10000" << endl;
+                    cout << "2. USA - 4098" << endl;
+                    cout << "\t08-07-2024 8:00 AM 10 hrs Rs. 20000" << endl;
+                    cout << "3. USA - 7798" << endl;
+                    cout << "\t08-07-2024 8:00 AM 10 hrs Rs. 40000" << endl;
+
+                    cout << "\nSelect the flight you want: ";
+                    cin >> choice1;
+
+                    if (choice1 == 1) {
+                        charges = 10000;
+                        cout << "Successfully booked USA - 498" << endl;
+                    } else if (choice1 == 2) {
+                        charges = 20000;
+                        cout << "Successfully booked USA - 4098" << endl;
+                    } else if (choice1 == 3) {
+                        charges = 40000;
+                        cout << "Successfully booked USA - 7798" << endl;
+                    } else {
+                        cout << "Invalid choice" << endl;
+                        flights();
+                    }
+
+                    cout << "Press any key to go to the main menu: ";
+                    cin >> back;
+                    mainMenu();
+                    break;
+                }
+                default: {
+                    cout << "Invalid choice" << endl;
+                    mainMenu();
+                    break;
+                }
+            }
+        }
+};
+
+float Registration::charges;
+int Registration::choice;
+
+class Ticket : public Registration, Details {
+    public:
+        void Bill() {
+            string destination = "";
+            ofstream outf("records.txt");
+            {
+                outf << "__________Cresent Airlines__________" << endl;
+                outf << "Customer ID: " << Details::Custid << endl;
+                outf << "Name: " << Details::name << endl;
+
+                if (Registration::choice1 == 1) {
+                    destination = "Dubai";
+                } else if (Registration::choice1 == 2) {
+                    destination = "Canada";
+                } else if (Registration::choice1 == 3) {
+                    destination = "UK";
+                } else if (Registration::choice1 == 4) {
+                    destination = "USA";
+                }
+
+                outf << "Destination: " << destination << endl;
+                outf << "Flight cost: " << Registration::charges << endl;
+            }
+            outf.close();
+        }
+
+        void display() {
+            ifstream ifs("records.txt");
+            {
+                if (!ifs) {
+                    cout << "File error" << endl;
+                }
+                while (!ifs.eof()) {
+                    ifs.getline(arr, 100);
+                    cout << arr << endl;
+                }
+            }
+            ifs.close();
+        }
+};
+
+void mainMenu() {
+    int lchoice;
+    int schoice;
+    int back;
+
+    cout << "\t\t\tCRESENT AIRLINES" << endl;
+    cout << "\t_________________Main Menu_________________" << endl;
+    cout << "\t___________________________________________" << endl;
+    cout << "\t|                                         |" << endl;
+    cout << "\t|  Press 1 to add customer details         |" << endl;
+    cout << "\t|  Press 2 for flight registration         |" << endl;
+    cout << "\t|  Press 3 for ticket and charges          |" << endl;
+    cout << "\t|  Press 4 to exit                         |" << endl;
+    cout << "\t___________________________________________" << endl;
+
+    cout << "Enter your choice: ";
+    cin >> lchoice;
+
+    Details d;
+    Registration r;
+    Ticket t;
+
+    switch (lchoice) {
+        case 1: {
+            cout << "________Customers_______" << endl;
+            d.information();
+            cout << "Press 1 to go back to the main menu: ";
+            cin >> back;
+
+            if (back == 1) {
+                mainMenu();
+            } else {
+                mainMenu();
+            }
+            break;
+        }
+        case 2: {
+            cout << "_____Book a flight using this system_____" << endl;
+            r.flights();
+            break;
+        }
+        case 3: {
+            cout << "___GET YOUR TICKET___" << endl;
+            t.Bill();
+            cout << "Your ticket is printed, you can collect it." << endl;
+            cout << "Press 1 to display your ticket: ";
+            cin >> back;
+
+            if (back == 1) {
+                t.display();
+                cout << "Press any key to go to the main menu: ";
+                cin >> back;
+                if (back == 1) {
+                    mainMenu();
+                } else {
+                    mainMenu();
+                }
+            } else {
+                mainMenu();
+            }
+            break;
+        }
+        case 4: {
+            cout << "\n\n\t_______Thank you_______" << endl;
+            break;
+        }
+        default: {
+            cout << "Invalid choice" << endl;
+            mainMenu();
+            break;
+        }
+    }
+}
+
+int main() {
+    Management mobj;
+    return 0;
+}
